@@ -24,7 +24,7 @@
 - 🔋 **Concurrent SOH + VDR Prediction** — First framework to simultaneously estimate State of Health (capacity fade) and Voltage Distortion Ratio (polarization indicator) in a unified model
 - 🎭 **MAE Self-Supervised Learning** — Masked Autoencoder branch reconstructs fragmented IoT data, enabling robust predictions under 10%–90% data loss
 - ⚖️ **Physics-Gated Dynamic Loss** — α-factor from IC curves adaptively weights SOH vs. VDR tasks, resolving the multi-task "seesaw effect"
-- ⚡ **Edge-Deployable** — ~530K parameters, <1MB model size, O(n) complexity via BiLSTM backbone
+- ⚡ **Edge-Deployable** — ~630K parameters, <2.5MB model size, O(n) complexity via BiLSTM backbone
 - 📊 **5 Real-World Datasets** — Validated on CALCE, HUST, HNEI, CALB, and ISU-ILCC battery cycling data
 
 ## Architecture
@@ -41,7 +41,7 @@ Masked [V, I] → BiLSTM Encoder → ┬─ MAE Decoder  → Reconstruction (L_m
 
 | Component | Description |
 |-----------|-------------|
-| **Shared Encoder** | 2-layer BiLSTM (hidden=128), LayerNorm, ~530K params |
+| **Shared Encoder** | 2-layer BiLSTM (hidden=128), LayerNorm, ~630K total params |
 | **MAE Decoder** | MLP reconstructor for self-supervised regularization |
 | **Attention Pooling** | 2-layer MLP attention (Tanh + Softmax) for time-step weighting |
 | **SOH / VDR Heads** | Parallel MLP heads: Linear(256→64) → GELU → Linear(64→1) |
@@ -57,7 +57,7 @@ Masked [V, I] → BiLSTM Encoder → ┬─ MAE Decoder  → Reconstruction (L_m
 | Standard GRU | 0.0298 | 0.0219 | 0.9428 | 165K |
 | Standard LSTM | 0.0276 | 0.0198 | 0.9510 | 220K |
 | Vanilla Transformer | 0.0301 | 0.0225 | 0.9416 | 789K |
-| **PG-M2TN (Ours)** | **0.0182** | **0.0129** | **0.9787** | **530K** |
+| **PG-M2TN (Ours)** | **0.0182** | **0.0129** | **0.9787** | **630K** |
 
 ### Ablation Study
 

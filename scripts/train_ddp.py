@@ -57,11 +57,11 @@ def get_args():
 
     # Training
     parser.add_argument('--epochs', type=int, default=100)
-    parser.add_argument('--batch_size', type=int, default=128,
+    parser.add_argument('--batch_size', type=int, default=256,
                         help='Per-GPU batch size. Total = batch_size * num_gpus')
     parser.add_argument('--lr', type=float, default=5e-4,
                         help='Base LR per GPU. Effective LR = lr * world_size.')
-    parser.add_argument('--weight_decay', type=float, default=1e-4)
+    parser.add_argument('--weight_decay', type=float, default=5e-4)
     parser.add_argument('--lambda_mae', type=float, default=0.1,
                         help='Weight for MAE reconstruction loss. Set to 0.1 to act as a soft regularizer.')
     parser.add_argument('--patience', type=int, default=25)
