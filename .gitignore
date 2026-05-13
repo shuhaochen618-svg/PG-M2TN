@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+
+# Virtual Environments
+venv/
+env/
+.env
+
+# Dataset & Data (large files — download separately)
+dataset/
+raw_data/
+
+# Model Checkpoints (large files)
+checkpoints/
+*.pth
+*.pt
+*.ckpt
+
+# Results & Outputs
+results/
+outputs/
+logs/
+*.npz
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Distribution / Packaging
+dist/
+build/
+*.egg-info/
+*.egg
