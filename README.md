@@ -15,6 +15,10 @@
 
 ---
 
+<div align="center">
+<img src="assets/framework_overview.png" alt="PG-M2TN Framework Overview" width="90%">
+</div>
+
 ## Highlights
 
 - 🔋 **Concurrent SOH + VDR Prediction** — First framework to simultaneously estimate State of Health (capacity fade) and Voltage Distortion Ratio (polarization indicator) in a unified model
